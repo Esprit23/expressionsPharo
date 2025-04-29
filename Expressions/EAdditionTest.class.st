@@ -22,3 +22,11 @@ EAdditionTest >> testEvaluateWithNegation [
  self assert: (EAddition new right: ep1; left: ep2) evaluate
  equals:-2
 ]
+
+{ #category : 'tests' }
+EAdditionTest >> testNegated [
+	| c1 c2 |
+	c1 := EConstant  new value: 5.
+	c2 := EConstant new value: 3.
+	self assert: (EAddition new right: c1 ; left: c2) negated evaluate equals: -8
+]

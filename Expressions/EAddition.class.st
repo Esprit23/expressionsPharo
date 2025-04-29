@@ -1,6 +1,6 @@
 Class {
 	#name : 'EAddition',
-	#superclass : 'Object',
+	#superclass : 'EExpression',
 	#instVars : [
 		'left',
 		'right'
@@ -11,15 +11,23 @@ Class {
 
 { #category : 'public access' }
 EAddition >> evaluate [
-	^ left evaluate + right evaluate 
+
+	^ left evaluate + right evaluate
 ]
 
 { #category : 'accessing' }
-EAddition >> left: anEConstant [ 
-	left := anEConstant
+EAddition >> left: arg1 [
+
+	left := arg1
+]
+
+{ #category : 'arithmetic' }
+EAddition >> negated [
+	^ENegation new expression: self.
 ]
 
 { #category : 'accessing' }
-EAddition >> right: anEConstant [ 
-	right := anEConstant
+EAddition >> right: arg1 [
+
+	right := arg1
 ]
